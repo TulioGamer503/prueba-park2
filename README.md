@@ -11,9 +11,9 @@
 
 ## Instalación
 
-1. Clona este repositorio: `git clone https://github.com/tu-usuario/aplicacion-de-estacionamiento.git`
-2. Instala las dependencias: `npm install`
-3. Inicia la aplicación: `npm start`
+1. Clona este repositorio: `git clone https://github.com/TulioGamer503/Crea-J.git`
+3. Instala las dependencias: `npm install`
+4. Inicia la aplicación: `npm start`
 
 ## Tecnologías Utilizadas
 
