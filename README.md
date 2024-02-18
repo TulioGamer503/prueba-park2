@@ -7,7 +7,7 @@
 - **Búsqueda de Estacionamiento:** Explora una amplia gama de opciones de estacionamiento en tu área, desde estacionamientos públicos hasta garajes privados.
 - **Reserva de Espacios:** Reserva tu lugar con antelación, ahorrándote tiempo y preocupaciones.
 - **Notificaciones en Tiempo Real:** Mantente al tanto de la disponibilidad de espacios con nuestra tecnología de sensores y notificaciones en tiempo real.
-- **Perfil de Usuario:** Gestiona tu información personal, métodos de pago y historial de reservas de manera fácil y conveniente.
+- **Perfil de Usuario:** Gestiona tu información personal, historial de reservas de manera fácil y conveniente.
 
 ## Instalación
 
@@ -27,9 +27,11 @@
 
 ## Equipo
 
-- **Juan Pérez** (Desarrollador Principal)
-- **María López** (Diseñadora UX/UI)
-- **Roberto García** (Especialista en Backend)
+- **Julio Jacinto* (Desarrollador Principal)
+- **Cesar Serrano* (Desarrollador Principal)
+- **Fernando Rivas** (Encargado del diseño y documentacion)
+- **Anderson Recinos** (Encargado del prototipo y documentacion)
+- **Victor Rivas** (Encargado del prototipo y presupuesto)
 
 ## Licencia
 
