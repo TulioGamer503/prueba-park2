@@ -19,7 +19,8 @@
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
 - **Base de Datos:** Xampp
-- **Organizacion:**Trello 
+- **Organizacion:** Trello
+- **Mockups:**https://www.figma.com/file/lRw4rq9yJdJJaDjBbZFdIs/Untitled?type=design&node-id=0%3A1&mode=design&t=LJTfGXhTaCwbVvui-1
 
 ## Contribuciones
 
