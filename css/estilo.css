@@ -1,0 +1,98 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #0a247a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 3px solid #000; /*Agrega un borde*/
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+  margin-right: 10px;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.invert-images img {
+    filter: invert(1); /* Invierte los colores solo de las imágenes dentro del footer */
+  }
+  
+  .purple-footer {
+    border: 2px solid #000; /*Agrega un borde*/
+    background-color: #0a247a; /* Código de color morado */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+a{
+  text-decoration:none;
+  Color:white;
+}
+  /* Estilos para el botón de búsqueda */
+.buscar-btn {
+  margin-top: 20px; /* Espacio superior */
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #0a247a; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor al pasar */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+
+
+
+
+  
