@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Alert</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-<body>
-
-    <?php
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php
 // Conectar a la base de datos (reemplaza los valores con los de tu configuración)
 $servername = "localhost";
 $username = "root";
@@ -29,40 +22,54 @@ $nombre_user = $_POST['nombre_user'];
 $contrasena_user = $_POST['contrasena_user'];
 $correo_user = $_POST['correo_user'];
 
-// Preparar la consulta SQL para insertar datos
+if (!filter_var($correo_user, FILTER_VALIDATE_EMAIL)) {
+    echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'error',
+            title: 'Correo electrónico inválido',
+            text: 'El correo electrónico no es válido.',
+            showConfirmButton: false,
+            timer: 3000
+        }).then(function() {
+            window.location = '../HTML/login.html';
+        });
+    </script>
+    ";
+    exit; // Detener la ejecución del script si el correo es inválido
+}
 $sql = "INSERT INTO `registro`(`id`, `nombre`, `email`, `contra`) 
         VALUES (NULL, '$nombre_user', '$contrasena_user', '$correo_user')";
 
-// Ejecutar la consulta
-if ($conn->query($sql) === TRUE) {
-    echo "<script>swal('Éxito!', 'Registro exitoso', 'success');</script>";
-} else {
-    echo "Error al registrar: " . $conn->error;
-}
-
-// Cerrar conexión
-$conn->close();
-?>
-
-    <script>
-        var SweetAlert2Demo = function () {
-            var initDemos = function () {
-                // Success alert
-                $('#m_sweetalert_demo_12').click(function (e) {
-                    swal("Success!", "This is a successful message", "success");
-                });
-            };
-9
-            return {
-                init: function () {
-                    initDemos();
-                },
-            };
-        }();
-
-        jQuery(document).ready(function () {
-            SweetAlert2Demo.init();
+$resultado = mysqli_query($conn,$sql);
+mysqli_close($conn);
+if ($resultado) {
+    echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: 'Te has registrado correctamente',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/login.html';
         });
     </script>
+    ";
+}else{
+    echo "
+    <script language='JavaScript'>
+        swal.fire({type: 'success',
+            title: 'Mal!'
+        }).then(function() {
+            window.location = '../HTML/login.html';
+        });
+    </script>
+    ";
+}
+    
+?> 
 </body>
 </html>
+
+
