@@ -39,7 +39,7 @@ if (!filter_var($correo_user, FILTER_VALIDATE_EMAIL)) {
     exit; // Detener la ejecución del script si el correo es inválido
 }
 $sql = "INSERT INTO `registro`(`id`, `nombre`, `email`, `contra`) 
-        VALUES (NULL, '$nombre_user', '$contrasena_user', '$correo_user')";
+        VALUES (NULL, '$nombre_user', '$correo_user','$contrasena_user')";
 
 $resultado = mysqli_query($conn,$sql);
 mysqli_close($conn);
