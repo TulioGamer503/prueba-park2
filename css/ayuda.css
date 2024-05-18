@@ -1,3 +1,18 @@
+a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.parqueo {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.parqueo:hover {
+  background-color: lightblue;
+}
+
 .signo {
     display: flex;
     justify-content: flex-start;
@@ -9,11 +24,10 @@
   .signo-1 {
     display: flex;
     align-items: center;
-    background-color: rgba(102, 102, 102, 0.363); /* Ajusta según tus necesidades */
+    background-color: #0a247a; /* Ajusta según tus necesidades */
     padding: 20px;
-    color: #000000;
+    color: #fff;
     border-radius: 70px;
-    border: 2px solid black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para mejor visibilidad */
     position: absolute;
     
@@ -44,11 +58,10 @@
   }
   /* Estilos de los parqueos */
   .parqueo {
-    width: 50%; /* Ancho relativo al contenedor principal */
-    padding-top: 10%; /* Altura relativa al ancho para mantener la relación de aspecto */
+    width: 40%; /* Ancho relativo al contenedor principal */
+    padding-top: 20%; /* Altura relativa al ancho para mantener la relación de aspecto */
     border: 2px solid black;
-    margin: 5%; /* Espacio entre los parqueos */
-    border-radius: 50px;
+    margin: 2%; /* Espacio entre los parqueos */
     position: relative;
     cursor: pointer;
   }
@@ -205,7 +218,7 @@
   
     .contenido-parqueo {
       font-size: 4vw; /* Tamaño de fuente mayor en dispositivos móviles */
-      padding-left: 10px;
+            padding-left: 10px;
     }
   
     .contenido-parqueo img {
