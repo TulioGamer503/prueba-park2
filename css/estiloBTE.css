@@ -5,7 +5,7 @@
     align-items: flex-start; /* Alinea los elementos hacia arriba */
     min-height: 80vh; /* Altura mínima del viewport */
   }
-  
+
   /* Estilos de los parqueos */
   .parqueo {
     width: 10%; /* Ancho relativo al contenedor principal */
