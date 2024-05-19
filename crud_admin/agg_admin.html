@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi App de Estacionamiento</title>
     <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="../css/ayuda.css">
+    <link rel="stylesheet" href="crud_css/agg_admin.css">
 </head>
 
 <body>
@@ -21,41 +21,27 @@
             <a href="../html/login.html"><img class="header-icon" src="../img/perfil.png" alt="Icono de Usuario"></a>
         </div>
     </header>
-    <div class="signo">
-        <div class="signo-1" id="signo-1">
-            <div class="contenido-signo">
-                <img src="../img/signo-de-interrogacion.png" alt="Ayuda">
-                <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-                <p>Necesitas ayuda</p>
+    <div class="container">
+        <div class="card">
+            <a class="singup">Sign Up</a>
+            <div class="inputBox1">
+                <input type="text" required="required">
+                <span class="user">Email</span>
             </div>
-        </div>
-    </div>
-    <div class="contenedor">
-        <div class="parqueo" id="parqueo1">
-            <div class="contenido-parqueo">
-                <img src="../img/cancelar.png" alt="Reportar un problema">
-                <p>Reportar un problema</p> <!-- Asegúrate de que la ruta a la imagen sea correcta -->
 
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Username</span>
             </div>
-        </div>
-        <div class="parqueo" id="parqueo2">
-            <div class="contenido-parqueo">
-                <img src="../img/pantone.png" alt="No entiendo los colores">
-                <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-                <p>No entiendo los colores</p>
+
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Password</span>
             </div>
+
+            <button class="enter">Enter</button>
+
         </div>
-        <div class="parqueo" id="parqueo3">
-            <div class="contenido-parqueo">
-                <img src="../img/soporte-tecnico.png" alt="Soporte">
-                <p>Soporte</p> <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-
-            </div>
-        </div>
-    </div>
-
-    <div class="contenedor2">
-
     </div>
 
     <footer class="purple-footer invert-images">
