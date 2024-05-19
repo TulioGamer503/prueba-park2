@@ -1,0 +1,246 @@
+.signo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 40vh; /* Ajusta según tus necesidades */
+    position: relative; /* Necesario para que los hijos posicionados absolutamente se alineen correctamente */
+  }
+  
+  .signo-1 {
+    display: flex;
+    align-items: center;
+    background-color: #0a247a; /* Ajusta según tus necesidades */
+    padding: 20px;
+    color: #fff;
+    border-radius: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para mejor visibilidad */
+    position: absolute;
+    
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la parte izquierda */
+  }
+  
+  .contenido-signo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contenido-signo img {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: 50px; /* Ajusta el tamaño de la imagen */
+    border-radius: 50%; /* Hace la imagen redonda */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+  }
+  
+  /* Estilos del contenedor principal */
+  .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  /* Estilos de los parqueos */
+  .parqueo {
+    width: 40%; /* Ancho relativo al contenedor principal */
+    padding-top: 20%; /* Altura relativa al ancho para mantener la relación de aspecto */
+    border: 2px solid black;
+    margin: 2%; /* Espacio entre los parqueos */
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Estilos del contenido dentro de los parqueos */
+  .contenido-parqueo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw; /* Tamaño de fuente relativo al ancho del viewport */
+    align-items: center;
+  }
+  #parqueo1 img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height:100px; /* Ajusta el tamaño de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 80px;
+  }
+  #parqueo2 img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height:100px; /* Ajusta el tamaño de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 80px;
+  }
+  #parqueo3 img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height:100px; /* Ajusta el tamaño de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+  }
+  
+  /* Estilos al pasar el mouse por encima */
+  .parqueo:hover {
+    background-color: lightblue;
+  }
+  
+  /* Estilos del pie de página */
+  footer {
+    width: 98%;
+    text-align: center;
+    margin-top: auto; /* Coloca el pie de página al final de la página */
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .icon {
+    width: 30px;
+    height: auto;
+  }
+  #parqueo1, #parqueo2,#parqueo3 {
+    background-color: rgba(102, 102, 102, 0.658);
+  }
+  
+  .contenedor #parqueo3 p{ 
+    padding-left: 40px ;
+  }
+  /* Estilos responsivos */
+  @media only screen and (max-width: 768px) {
+    .logo {
+      height: 30px; /* Reducir la altura de la imagen en dispositivos más pequeños */
+    }
+    .signo{
+        height: 10vh;
+    }
+    .header-icon {
+      width: 25px;
+      margin-right: 15px;
+    }
+  
+    .buscar-btn {
+      font-size: 14px;
+    }
+    .contenedor{
+        margin: 55px 0;
+    }
+  
+    /* Ajustes adicionales para los parqueos en dispositivos móviles */
+    .parqueo {
+      width: 40%; /* Ancho mayor en dispositivos móviles */
+      padding-top: 40%; /* Altura mayor en dispositivos móviles */
+    }
+    .contenido-parqueo {
+      font-size: 3vw; /* Tamaño de fuente mayor en dispositivos móviles */
+    }
+    .contenido-parqueo p{
+        padding-left: 10px;
+    }
+    .contenido-parqueo img{
+        padding-left: 10px;
+    }
+    
+  }
+  @media only screen and (max-width: 700px) {
+    .logo {
+      height: 30px; /* Reducir la altura de la imagen en dispositivos más pequeños */
+    }
+  
+    .header-icon {
+      width: 25px;
+      margin-right: 15px;
+    }
+  
+    .buscar-btn {
+      font-size: 14px;
+    }
+  
+    /* Ajustes adicionales para los parqueos en dispositivos móviles */
+    .parqueo {
+      width: 40%; /* Ancho mayor en dispositivos móviles */
+      padding-top: 40%; /* Altura mayor en dispositivos móviles */
+    }
+  
+    .contenido-parqueo {
+      font-size: 4vw; /* Tamaño de fuente mayor en dispositivos móviles */
+    }
+    .contenido-parqueo img{
+        padding-left: 10px;
+        width: 70px;
+        height: 70px;
+    }
+    .contenedor, .contenedor2 {
+        flex-direction: column;
+        align-items: center;
+      }
+  }
+  @media only screen and (max-width: 400px) {
+    .logo {
+      height: 30px; /* Reducir la altura de la imagen en dispositivos más pequeños */
+    }
+  
+    .header-icon {
+      width: 25px;
+      margin-right: 15px;
+    }
+  
+    .buscar-btn {
+      font-size: 14px;
+    }
+  
+    /* Ajustes adicionales para los parqueos en dispositivos móviles */
+    .parqueo {
+      width: 80%; /* Ancho mayor en dispositivos móviles */
+    }
+  
+    .contenido-parqueo {
+      font-size: 4vw; /* Tamaño de fuente mayor en dispositivos móviles */
+            padding-left: 10px;
+    }
+  
+    .contenido-parqueo img {
+      width: 40px; /* Ajusta el tamaño de la imagen */
+      height: 40px; /* Ajusta el tamaño de la imagen */
+      margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    }
+  
+    .contenedor {
+      flex-direction: column;
+    }
+  
+    .parqueo {
+      margin-bottom: 20px; /* Añade margen inferior en dispositivos móviles */
+    }
+  }
+  /* Estilos del botón redondo */
+  .round-button {
+  position: absolute; /* Coloca el botón en posición absoluta */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde el lado derecho */
+  z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0a247a;
+  border: none;
+  cursor: pointer;
+  }
+  
+  .round-button img {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
+  
