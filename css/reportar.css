@@ -97,13 +97,12 @@
     position: relative;
   }
   textarea {
-    color: #fff;
     background-color: rgba(102, 102, 102, 0.397);
     width: 100%; /* Ajusta el ancho del textarea */
     max-width: 400px; /* Ancho máximo del textarea */
     padding: 10px; /* Espacio interno del textarea */
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     box-sizing: border-box; /* Asegura que el padding no afecta al ancho total */
   }
   
