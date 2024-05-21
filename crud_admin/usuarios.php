@@ -1,8 +1,8 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
+$username = "root";
+$password = "";
 $dbname = "crea-j";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,13 +13,20 @@ if ($conn->connect_error) {
 }
 
 // Obtener todos los usuarios
-$result = $conn->query("SELECT id, email, username, fecha_registro FROM usuarios");
+$sql = "SELECT id, nombre, email, fecha_registro FROM registro";
+$result = $conn->query($sql);
 $usuarios = [];
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $usuarios[] = $row;
+
+if ($result) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $usuarios[] = $row;
+        }
     }
+} else {
+    echo "Error en la consulta: " . $conn->error;
 }
+
 $conn->close();
 ?>
 
@@ -30,7 +37,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de Usuarios</title>
     <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="crud_css/agg_admin.css">
+    <link rel="stylesheet" href="crud_css/tabla.css">
 </head>
 <body>
     <header>
@@ -55,14 +62,20 @@ $conn->close();
                 </tr>
             </thead>
             <tbody id="user-table">
-                <?php foreach ($usuarios as $usuario): ?>
-                <tr>
-                    <td><?= $usuario['id'] ?></td>
-                    <td><?= $usuario['email'] ?></td>
-                    <td><?= $usuario['username'] ?></td>
-                    <td><?= $usuario['fecha_registro'] ?></td>
-                </tr>
-                <?php endforeach; ?>
+                <?php if (!empty($usuarios)): ?>
+                    <?php foreach ($usuarios as $usuario): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($usuario['id']) ?></td>
+                            <td><?= htmlspecialchars($usuario['nombre']) ?></td>
+                            <td><?= htmlspecialchars($usuario['email']) ?></td>
+                            <td><?= htmlspecialchars($usuario['fecha_registro']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4">No hay usuarios registrados</td>
+                    </tr>
+                <?php endif; ?>
             </tbody>
         </table>
     </main>
