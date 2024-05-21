@@ -42,7 +42,7 @@ $conn->close();
 <body>
     <header>
         <div class="logo-container">
-            <a href="pagina_casa.html"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
+            <a href="index.html"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
         </div>
         <h1>Administración de Usuarios</h1>
         <div class="icons-container">

@@ -1,32 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-// Conexión a la base de datos
+// Conectar a la base de datos (reemplaza los valores con los de tu configuración)
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "crea-j";
 
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    die("La conexión falló: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $reporte = $_POST['error-report'];
+// Recibir datos del formulario
+$reporte = $_POST['reporte'];
+$sql = "INSERT INTO `reportes`(`id`, 'reporte') 
+        VALUES (NULL, '$reporte')";
 
-    // Preparar y ejecutar la consulta
-    $stmt = $conn->prepare("INSERT INTO reportes (reporte) VALUES (?)");
-    $stmt->bind_param("s", $reporte);
-
-    if ($stmt->execute()) {
-        echo "Reporte enviado con éxito.";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
+$resultado = mysqli_query($conn,$sql);
+mysqli_close($conn);
+if ($resultado) {
+    echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: 'Te has registrado correctamente',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/login.html';
+        });
+    </script>
+    ";
+}else{
+    echo "
+    <script language='JavaScript'>
+        swal.fire({type: 'success',
+            title: 'Mal!'
+        }).then(function() {
+            window.location = '../HTML/login.html';
+        });
+    </script>
+    ";
 }
+    
+?> 
+</body>
+</html>
 
-$conn->close();
-?>
+
