@@ -22,11 +22,33 @@ if (!isset($_POST['email'])) {
 $correo = $_POST['email'];
 $contra = $_POST['contra'];
 
+$sql_admin = "SELECT * FROM `admin` WHERE email = '$correo' and password = '$contra'";
+$result_admin = mysqli_query($conn, $sql_admin);
+$existe1 = mysqli_num_rows($result_admin);
+
 $sql_user = "SELECT * FROM `registro` WHERE email = '$correo' and contra = '$contra'";
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
-if ($existe2 > 0) {
+if ($existe1 > 0) {
+    while ($row = mysqli_fetch_array($result_admin)) {
+        if ($correo == $row['email'] && $contra == $row['password']) {
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['id'];
+            echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Bienvenid@ a Parknow Administrador!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../crud_admin/index.html';
+                });
+            </script>";
+        }
+    }
+} else if ($existe2 > 0) {
     while ($row = mysqli_fetch_array($result_user)) {
         if ($correo == $row['email'] && $contra == $row['contra']) {
             $_SESSION['email'] = $row['email'];
@@ -35,7 +57,7 @@ if ($existe2 > 0) {
     <script language='JavaScript'>
         swal.fire({
             icon: 'success',
-            title: '¡Bienvenid@ a SaludRural!',
+            title: '¡Bienvenid@ a Parknow',
             showConfirmButton: false,
             timer: 2000
         }).then(function() {
@@ -44,7 +66,23 @@ if ($existe2 > 0) {
     </script>";
 }
     }
-} else {
+} elseif {
+    while ($row = mysqli_fetch_array($result_user)) {
+        if ($correo == $row['email'] && $contra == $row['contra']) {
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['id'];
+            echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: '¡Bienvenid@ a ParkNow',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/index.html';
+        });
+    </script>";}}
+}else {
     echo "
     <script language='JavaScript'>
         swal.fire({
@@ -56,8 +94,7 @@ if ($existe2 > 0) {
         });
     </script>
     ";
-}
-
+    }
 ?>
 </body>
 </html>

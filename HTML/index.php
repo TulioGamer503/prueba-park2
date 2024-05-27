@@ -22,9 +22,9 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
   <div class="logo-container">
       <a href="index.html"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
   </div>
-  <h1>Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?></h1> <!-- Personaliza con el nombre del usuario -->
+  <h1>Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?></h1> 
   <div class="icons-container">
-      <a href="../php/logout.php"><img class="header-icon" src="../img/logout.png" alt="Icono de Cerrar Sesión"></a> <!-- Icono de cerrar sesión -->
+      <a href="../php/logout.php"><img class="header-icon" src="../img/logout.png" alt="Icono de Cerrar Sesión"></a> 
   </div>
 </header>
 

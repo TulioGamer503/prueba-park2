@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('location:../html/login.html');
+    exit();
+}
+
+// Aquí obtienes el nombre del usuario desde la sesión o la base de datos
+$nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del usuario en la sesión
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,9 +27,8 @@
         </div>
         <h1>Busca tu estacionamiento</h1>
         <div class="icons-container">
-            <!--<a href="pagina_casa.html"><img class="header-icon" src="../img/carros.png" alt="Icono de Carros"></a>-->
-            <a href="../html/login.html"><img class="header-icon" src="../img/perfil.png" alt="Icono de Usuario"></a>
-        </div>
+      <a href="../php/logout.php"><img class="header-icon" src="../img/logout.png" alt="Icono de Cerrar Sesión"></a> 
+  </div>
     </header>
     <div class="signo">
         <div class="signo-1" id="signo-1">
@@ -56,7 +65,7 @@
             </a>
         </div>
         <div class="parqueo" id="parqueo3">
-            <a href="agg_admin.html">
+            <a href="agg_admin.php">
                 <div class="contenido-parqueo">
                     <img src="../img/soporte-tecnico.png" alt="Soporte">
                     <p>Agregar Admin</p>
