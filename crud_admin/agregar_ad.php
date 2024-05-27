@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Encriptar la contraseña
 
     // Preparar y ejecutar la consulta
-    $stmt = $conn->prepare("INSERT INTO usuarios (email, username, password) VALUES ($email, $username, $password)");
+    $stmt = $conn->prepare("INSERT INTO admin (email, nombre, password) VALUES ($email, $username, $password)");
     $stmt->bind_param("sss", $email, $username, $password);
 
     if ($stmt->execute()) {
