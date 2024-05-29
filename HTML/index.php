@@ -37,7 +37,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
   </div>
   
   <!-- Botón de búsqueda -->
-  <button class="buscar-btn"><a href="../html/ved.html">Buscar estacionamiento</a></button>
+  <button class="buscar-btn"><a href="../html/ved.php">Buscar estacionamiento</a></button>
 </div>
 
 <footer class="purple-footer invert-images">
