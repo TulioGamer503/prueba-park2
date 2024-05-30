@@ -7,7 +7,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crea-j";
+$dbname = "crea-j 2024";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,6 +21,7 @@ if ($conn->connect_error) {
 $nombre_user = $_POST['nombre_user'];
 $contrasena_user = $_POST['contrasena_user'];
 $correo_user = $_POST['correo_user'];
+$apellido = $_POST['apellido'];
 
 if (!filter_var($correo_user, FILTER_VALIDATE_EMAIL)) {
     echo "
@@ -36,10 +37,10 @@ if (!filter_var($correo_user, FILTER_VALIDATE_EMAIL)) {
         });
     </script>
     ";
-    exit; // Detener la ejecución del script si el correo es inválido
+    exit; 
 }
-$sql = "INSERT INTO `registro`(`id`, `nombre`, `email`, `contra`) 
-        VALUES (NULL, '$nombre_user', '$correo_user','$contrasena_user')";
+$sql = "INSERT INTO `usuario`(`ID_Usuario`, `Nombre`, `Apellido`, `CorreoElectronico`, `Contraseña`)
+        VALUES (NULL, '$nombre_user','$apellido', '$correo_user','$contrasena_user')";
 
 $resultado = mysqli_query($conn,$sql);
 mysqli_close($conn);

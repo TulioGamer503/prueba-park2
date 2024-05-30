@@ -22,11 +22,11 @@ if (!isset($_POST['email'])) {
 $correo = $_POST['email'];
 $contra = $_POST['contra'];
 
-$sql_admin = "SELECT * FROM `admin` WHERE email = '$correo' and password = '$contra'";
+$sql_admin = "SELECT * FROM `admin` WHERE CorreoElectronico = '$correo' and Contraseña = '$contra'";
 $result_admin = mysqli_query($conn, $sql_admin);
 $existe1 = mysqli_num_rows($result_admin);
 
-$sql_user = "SELECT * FROM `registro` WHERE email = '$correo' and contra = '$contra'";
+$sql_user = "SELECT * FROM `usuario` WHERE CorreoElectronico  = '$correo' and Contraseña	 = '$contra'";
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
