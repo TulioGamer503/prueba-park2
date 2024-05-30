@@ -32,7 +32,7 @@
     </div>
     <div class="contenedor">
         <div class="parqueo" id="parqueo1">
-            <a href="ver_reportes.php">
+            <a href="reportar.php">
                 <div class="contenido-parqueo">
                     <img src="../img/cancelar.png" alt="Reportar un problema">
                     <p>Ver problemas reportados</p>
@@ -52,14 +52,6 @@
                 <div class="contenido-parqueo">
                     <img src="../img/soporte-tecnico.png" alt="Soporte">
                     <p>Soporte</p>
-                </div>
-            </a>
-        </div>
-        <div class="parqueo" id="parqueo3">
-            <a href="agg_admin.php">
-                <div class="contenido-parqueo">
-                    <img src="../img/soporte-tecnico.png" alt="Soporte">
-                    <p>Agregar Admin</p>
                 </div>
             </a>
         </div>
