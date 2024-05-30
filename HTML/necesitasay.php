@@ -32,25 +32,36 @@
     </div>
     <div class="contenedor">
         <div class="parqueo" id="parqueo1">
-            <div class="contenido-parqueo">
-                <img src="../img/cancelar.png" alt="Reportar un problema">
-                <p>Reportar un problema</p> <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-
-            </div>
+            <a href="ver_reportes.php">
+                <div class="contenido-parqueo">
+                    <img src="../img/cancelar.png" alt="Reportar un problema">
+                    <p>Ver problemas reportados</p>
+                </div>
+            </a>
         </div>
         <div class="parqueo" id="parqueo2">
-            <div class="contenido-parqueo">
-                <img src="../img/pantone.png" alt="No entiendo los colores">
-                <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-                <p>No entiendo los colores</p>
-            </div>
+            <a href="pagina_no_entiendo_colores.html">
+                <div class="contenido-parqueo">
+                    <img src="../img/pantone.png" alt="No entiendo los colores">
+                    <p>Editar parqueos</p>
+                </div>
+            </a>
         </div>
         <div class="parqueo" id="parqueo3">
-            <div class="contenido-parqueo">
-                <img src="../img/soporte-tecnico.png" alt="Soporte">
-                <p>Soporte</p> <!-- Asegúrate de que la ruta a la imagen sea correcta -->
-
-            </div>
+            <a href="pagina_soporte.html">
+                <div class="contenido-parqueo">
+                    <img src="../img/soporte-tecnico.png" alt="Soporte">
+                    <p>Soporte</p>
+                </div>
+            </a>
+        </div>
+        <div class="parqueo" id="parqueo3">
+            <a href="agg_admin.php">
+                <div class="contenido-parqueo">
+                    <img src="../img/soporte-tecnico.png" alt="Soporte">
+                    <p>Agregar Admin</p>
+                </div>
+            </a>
         </div>
     </div>
 
