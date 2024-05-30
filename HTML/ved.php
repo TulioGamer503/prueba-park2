@@ -38,12 +38,11 @@
 <footer class="purple-footer invert-images">
   <div class="footer-icons">
     <a href="../html/index.html"><img class="icon invert-img" src="../img/casa.png" alt="Icono Casa"></a>
-    <a href="pagina_mensaje.html"><img class="icon invert-img" src="../img/chat.png" alt="Icono Chat"></a>
     <a href="pagina_ajustes.html"><img class="icon invert-img" src="../img/ajustes.png" alt="Icono Ajustes"></a>
   </div>
 </footer>
 
-<a href="necesitasay.html">
+<a href="necesitasay.php">
   <button class="round-button">
       <img src="../img/signo-de-interrogacion.png" alt="Botón">
   </button>
