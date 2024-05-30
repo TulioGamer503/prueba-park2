@@ -22,31 +22,56 @@
             <div id="estacionamiento" class="menu-section">
                 <h3>Problemas de Estacionamiento</h3>
                 <p>Por favor, describa el problema:</p>
-                <textarea rows="4" cols="50"></textarea>
+                <form action="../PHP/guardar-reportes.php" method="post">
+                    <input type="hidden" name="categoria" value="Estacionamiento">
+                    <textarea name="descripcion" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Reporte">
+                </form>
             </div>
 
             <div id="tecnologia" class="menu-section">
                 <h3>Problemas de Tecnología</h3>
                 <p>Por favor, describa el problema:</p>
-                <textarea rows="4" cols="50"></textarea>
+                <form action="../PHP/guardar-reportes.php" method="post">
+                    <input type="hidden" name="categoria" value="Tecnologia">
+                    <textarea name="descripcion" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Reporte">
+                </form>
             </div>
 
             <div id="senalizacion" class="menu-section">
                 <h3>Problemas de Señalización</h3>
                 <p>Por favor, describa el problema:</p>
-                <textarea rows="4" cols="50"></textarea>
+                <form action="../PHP/guardar-reportes.php" method="post">
+                    <input type="hidden" name="categoria" value="Senalizacion">
+                    <textarea name="descripcion" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Reporte">
+                </form>
             </div>
 
             <div id="mantenimiento" class="menu-section">
                 <h3>Problemas de Mantenimiento</h3>
                 <p>Por favor, describa el problema:</p>
-                <textarea rows="4" cols="50"></textarea>
+                <form action="../PHP/guardar-reportes.php" method="post">
+                    <input type="hidden" name="categoria" value="Mantenimiento">
+                    <textarea name="descripcion" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Reporte">
+                </form>
             </div>
 
             <div id="otro" class="menu-section">
                 <h3>Otro Problema</h3>
                 <p>Por favor, describa el problema:</p>
-                <textarea rows="4" cols="50"></textarea>
+                <form action="guardar_reporte.php" method="post">
+                    <input type="hidden" name="categoria" value="Otro">
+                    <textarea name="descripcion" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Reporte">
+                </form>
             </div>
         </div>
     </div>
@@ -54,5 +79,6 @@
     <script src="../JS/reportar-problema.js"></script>
 </body>
 </html>
+
 
 
