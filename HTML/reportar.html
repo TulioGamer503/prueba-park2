@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Problemas</title>
+    <link rel="stylesheet" href="../css/reportar-problema.css">
+</head>
+<body>
+    <div class="container">
+        <button class="report-button" onclick="toggleMenu()">Reportar Problema</button>
+        <div id="menu-content" class="menu-content">
+            <h2>Seleccione el problema:</h2>
+            <div class="button-container">
+                <button onclick="showSection('estacionamiento')">Estacionamiento</button>
+                <button onclick="showSection('tecnologia')">Tecnología</button>
+                <button onclick="showSection('senalizacion')">Señalización</button>
+                <button onclick="showSection('mantenimiento')">Mantenimiento</button>
+                <button onclick="showSection('otro')">Otro</button>
+            </div>
+
+            <div id="estacionamiento" class="menu-section">
+                <h3>Problemas de Estacionamiento</h3>
+                <p>Por favor, describa el problema:</p>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+
+            <div id="tecnologia" class="menu-section">
+                <h3>Problemas de Tecnología</h3>
+                <p>Por favor, describa el problema:</p>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+
+            <div id="senalizacion" class="menu-section">
+                <h3>Problemas de Señalización</h3>
+                <p>Por favor, describa el problema:</p>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+
+            <div id="mantenimiento" class="menu-section">
+                <h3>Problemas de Mantenimiento</h3>
+                <p>Por favor, describa el problema:</p>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+
+            <div id="otro" class="menu-section">
+                <h3>Otro Problema</h3>
+                <p>Por favor, describa el problema:</p>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/reportar-problema.js"></script>
+</body>
+</html>
+
+
