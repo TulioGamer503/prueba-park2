@@ -13,7 +13,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crea-j";
+$dbname = "crea-j 2024";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 }
 
 // Obtener todos los usuarios
-$sql = "SELECT id, nombre, email, fecha_registro FROM registro";
+$sql = "SELECT * FROM usuario";
 $result = $conn->query($sql);
 $usuarios = [];
 
@@ -52,12 +52,12 @@ $conn->close();
 <body>
     <header>
         <div class="logo-container">
-            <a href="index.html"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
+            <a href="index.php"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
         </div>
         <h1>Administración de Usuarios</h1>
         <div class="icons-container">
-            <a href="../html/login.html"><img class="header-icon" src="../img/perfil.png" alt="Icono de Usuario"></a>
-        </div>
+      <a href="../php/logout.php"><img class="header-icon" src="../img/logout.png" alt="Icono de Cerrar Sesión"></a> 
+  </div>
     </header>
 
     <main>
@@ -66,8 +66,9 @@ $conn->close();
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Email</th>
-                    <th>Nombre de Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo Electronico</th>
                     <th>Fecha de Registro</th>
                 </tr>
             </thead>
@@ -75,9 +76,10 @@ $conn->close();
                 <?php if (!empty($usuarios)): ?>
                     <?php foreach ($usuarios as $usuario): ?>
                         <tr>
-                            <td><?= htmlspecialchars($usuario['id']) ?></td>
-                            <td><?= htmlspecialchars($usuario['nombre']) ?></td>
-                            <td><?= htmlspecialchars($usuario['email']) ?></td>
+                            <td><?= htmlspecialchars($usuario['ID_Usuario']) ?></td>
+                            <td><?= htmlspecialchars($usuario['Nombre']) ?></td>
+                            <td><?= htmlspecialchars($usuario['Apellido']) ?></td>
+                            <td><?= htmlspecialchars($usuario['CorreoElectronico']) ?></td>
                             <td><?= htmlspecialchars($usuario['fecha_registro']) ?></td>
                         </tr>
                     <?php endforeach; ?>

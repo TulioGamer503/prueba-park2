@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('location:../html/login.html');
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,12 +21,14 @@
 
     <header>
         <div class="logo-container">
-            <a href="pagina_casa.html"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
+            <a href="index.php"><img class="logo" src="../img/estrella (1).png" alt="Logo de la App"></a>
         </div>
         <h1>Busca tu estacionamiento</h1>
         <div class="icons-container">
             <!--<a href="pagina_casa.html"><img class="header-icon" src="../img/carros.png" alt="Icono de Carros"></a>-->
-            <a href="../html/login.html"><img class="header-icon" src="../img/perfil.png" alt="Icono de Usuario"></a>
+            <div class="icons-container">
+      <a href="../php/logout.php"><img class="header-icon" src="../img/logout.png" alt="Icono de Cerrar Sesión"></a> 
+  </div>
         </div>
     </header>
     <div class="signo">
@@ -35,20 +45,20 @@
             <a href="reportar.php">
                 <div class="contenido-parqueo">
                     <img src="../img/cancelar.png" alt="Reportar un problema">
-                    <p>Ver problemas reportados</p>
+                    <p>Reportar un problema</p>
                 </div>
             </a>
         </div>
         <div class="parqueo" id="parqueo2">
-            <a href="pagina_no_entiendo_colores.html">
+            <a href="#">
                 <div class="contenido-parqueo">
                     <img src="../img/pantone.png" alt="No entiendo los colores">
-                    <p>Editar parqueos</p>
+                    <p>No entiendo los colores</p>
                 </div>
             </a>
         </div>
         <div class="parqueo" id="parqueo3">
-            <a href="pagina_soporte.html">
+            <a href="#">
                 <div class="contenido-parqueo">
                     <img src="../img/soporte-tecnico.png" alt="Soporte">
                     <p>Soporte</p>

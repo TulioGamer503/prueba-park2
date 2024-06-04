@@ -1,41 +1,26 @@
 <?php
-// Verifica si se han enviado datos a través del método POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del formulario
-    $categoria = $_POST["categoria"];
-    $descripcion = $_POST["descripcion"];
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'crea-j 2024';
 
-    // Conexión a la base de datos (cambia estos valores según tu configuración)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "crea-j 2024";
-
-    // Crea una conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verifica la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Prepara la consulta SQL para insertar el reporte en la base de datos
-    $sql = "INSERT INTO reportes (categoria, descripcion) VALUES ('$categoria', '$descripcion')";
-
-    // Ejecuta la consulta y verifica si fue exitosa
-    if ($conn->query($sql) === TRUE) {
-        // Cierra la conexión a la base de datos
-        $conn->close();
-        // Muestra la alerta formal
-        echo "<script>alert('Agradecemos tu reporte. Por favor, acepta nuestras disculpas por cualquier inconveniente causado. Estamos trabajando para mejorar. Serás redirigido.'); setTimeout(function(){ window.location.href = '../HTML/index.php'; }, 1000);</script>";
-        // Redirige al usuario a otra página
-        exit; // Esto asegura que el script se detenga aquí para que no se ejecute el resto del código
-    } else {
-        echo "Error al guardar el reporte: " . $conn->error;
-    }
-
-    // Cierra la conexión a la base de datos
-    $conn->close();
+$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+if (!$conn) {
+    die("Error de la conexion a la base de datos: " . mysqli_connect_error());
 }
-?>
+$descripcion = $_POST['descripcion'];
+$categoria_id = $_POST['categoria'];
+session_start();
+$usuario_id = $_SESSION['ID_Usuario']; 
+$insert_query = "INSERT INTO datos (id, descripcion, categoria_id, usuario_id) VALUES (NULL, '$descripcion', '$categoria_id', $usuario_id)";
 
+if (mysqli_query($conn, $insert_query)) {
+    header('Location: ../html/index.php');
+
+    echo "Reporte guardado con éxito.";
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>

@@ -49,7 +49,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
             </a>
         </div>
         <div class="parqueo" id="parqueo2">
-            <a href="pagina_no_entiendo_colores.html">
+            <a href="usuarios.php">
                 <div class="contenido-parqueo">
                     <img src="../img/pantone.png" alt="No entiendo los colores">
                     <p>Editar parqueos</p>

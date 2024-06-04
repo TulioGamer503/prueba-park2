@@ -43,7 +43,7 @@ if ($existe1 > 0) {
                 showConfirmButton: false,
                 timer: 2000
             }).then(function() {
-                window.location = '../crud_admin/index.html';
+                window.location = '../crud_admin/index.php';
             });
         </script>";
     }
