@@ -1,0 +1,66 @@
+<?php
+// Configuración de la conexión a la base de datos
+$servername = "localhost"; // Nombre del servidor MySQL
+$username = "root"; // Nombre de usuario de la base de datos
+$password = ""; // Contraseña de la base de datos
+$database = "crea"; // Nombre de la base de datos
+
+// Parámetros de paginación
+$results_per_page = 6; // Número de resultados por página
+
+// Determinar la página actual
+if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+    $current_page = $_GET['page'];
+} else {
+    $current_page = 1;
+}
+
+// Calcular el inicio del conjunto de resultados
+$start_from = ($current_page - 1) * $results_per_page;
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Consulta SQL para obtener los administradores paginados
+$sql = "SELECT * FROM `admin` LIMIT $start_from, $results_per_page";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Imprimir datos de cada fila
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['nombre']) . '</td>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['email']) . '</td>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['fecha_registro']) . '</td>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">';
+        echo '<button class="text-gray-600 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 mx-2">';
+        echo '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
+        echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m2-4h2m-4 8h4m4 5H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" />';
+        echo '</svg>';
+        echo '</button>';
+        echo '<button class="text-gray-600 dark:text-gray-200 hover:text-red-500 dark:hover:text-red-400 mx-2">';
+        echo '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">';
+        echo '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-1 14H6L5 7m14 0H5M4 4h16M10 11v6m4-6v6" />';
+        echo '</svg>';
+        echo '</button>';
+        echo '</td>';
+        echo '</tr>';
+    }
+} else {
+    echo "<tr><td colspan='4'>No hay administradores registrados.</td></tr>";
+}
+
+// Calcular el número total de páginas
+$sql_count = "SELECT COUNT(*) AS total FROM `admin`";
+$result_count = $conn->query($sql_count);
+$row_count = $result_count->fetch_assoc();
+$total_pages = ceil($row_count['total'] / $results_per_page);
+
+// Cerrar conexión
+$conn->close();
+?>

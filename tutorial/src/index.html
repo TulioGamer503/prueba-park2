@@ -8,91 +8,7 @@
 </head>
 
 <body>
-  <header class="bg-white">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
-      </div>
-      <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <div class="relative">
-          <a href="index.html" class="text-sm font-semibold leading-6 text-gray-900">Inicio</a>
-          <div
-            class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-          </div>
-        </div>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-      </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-            aria-hidden="true">&rarr;</span></a>
-      </div>
-    </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden" role="dialog" aria-modal="true">
-      <!-- Background backdrop, show/hide based on slide-over state. -->
-      <div class="fixed inset-0 z-50 bg-black opacity-50"></div>
-      <div class="fixed inset-y-0 right-0 z-50 w-64 bg-white overflow-y-auto shadow-lg">
-        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-          <a href="#" class="p-2">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-          </a>
-          <button type="button" onclick="closeMobileMenu()" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Close menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-
-        </div>
-        <div class="p-4">
-          <!-- Contenido del menú -->
-          <a href="#" class="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100">Product</a>
-          <div class="mt-2">
-            <!-- Submenú de "Product" -->
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Analytics</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Engagement</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Security</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Integrations</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Automations</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Watch demo</a>
-            <a href="#" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Contact sales</a>
-          </div>
-          <a href="#" class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:bg-gray-100">Features</a>
-          <a href="#" class="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100">Marketplace</a>
-          <a href="#" class="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100">Company</a>
-          <a href="#" class="block px-4 py-2 mt-6 text-sm font-semibold text-gray-900 hover:bg-gray-100">Log in</a>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Obtén una referencia al botón de cierre del menú móvil
-      const closeButton = document.querySelector('.fixed.inset-0.z-10 + .fixed .rounded-md');
-
-      // Agrega un manejador de eventos clic al botón
-      closeButton.addEventListener('click', () => {
-        // Oculta el menú móvil
-        document.querySelector('.fixed.inset-0.z-10').classList.add('hidden');
-      });
-
-    </script>
-
-  </header>
+  
   <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <svg
@@ -111,8 +27,7 @@
         <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
       </svg>
     </div>
-    <div
-      class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
       <div
         class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
         <div class="lg:pr-4">

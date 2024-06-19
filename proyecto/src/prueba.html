@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="output.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="bg-gray-200">
+ <!-- component -->
+<!-- component -->
+<nav class="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <a href="/" class="flex items-center">
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+        Website
+      </span>
+    </a>
+
+    <div class="flex items-center">
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- Hamburger icon -->
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div
+      class="w-full md:block md:w-auto hidden"
+      id="mobile-menu"
+    >
+      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+        <li>
+          <a
+            href="#"
+            class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+            aria-current="page"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+          >
+            Services
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+          >
+            Pricing
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', function () {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+<div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg
+      class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+      aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
+          patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+          stroke-width="0" />
+      </svg>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">ParkNow</h1>
+          <p class="mt-6 text-xl leading-8 text-gray-700"> Busca tu estacionamiento con nosotros, somos una
+            alternativa fácil y rápida. Encuentra estacionamientos cercanos a tu ubicación, reserva con anticipación,
+            y disfruta de una experiencia de estacionamiento sin estrés. Con nuestro sistema de reservas en línea,
+            puedes encontrar el lugar perfecto para estacionar tu vehículo, ya sea para un evento, una cita, o
+            simplemente para hacer tus compras diarias. ¡Deja atrás la preocupación por encontrar un lugar para
+            estacionar y comienza a disfrutar de la comodidad que ofrecemos!</p>
+        </div>
+      </div>
+    </div>
+    <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+        src="../img/inicioparking.jpg" alt="">
+    </div>
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+          <p>Nuestro sistema te permite explorar una amplia gama de opciones de estacionamiento, desde
+            estacionamientos públicos hasta estacionamientos privados en edificios y complejos residenciales. Además,
+            puedes filtrar tus resultados según tus preferencias, como la distancia desde tu ubicación, el precio, y
+            las comodidades ofrecidas, para encontrar el estacionamiento perfecto que se adapte a tus necesidades.</p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg class="mt-1 h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span><strong class="font-semibold text-gray-900">Push to deploy.</strong> Con nuestro servicio de "Push
+                to deploy", puedes implementar tus cambios de código de manera rápida y sencilla. Olvídate de los
+                largos procesos de despliegue y actualiza tu aplicación con solo pulsar un botón, ahorrando tiempo y
+                esfuerzo en cada iteración de desarrollo.</span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span><strong class="font-semibold text-gray-900">SSL certificates.</strong> Nuestra plataforma ofrece
+                SSL certificates para garantizar la seguridad y privacidad de tus datos y la de tus usuarios. Con
+                certificados SSL instalados en tu sitio web, puedes proteger las transmisiones de datos entre tu
+                servidor y los navegadores de tus usuarios, fortaleciendo la confianza y la seguridad en tu
+                aplicación.</span>
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="mt-1 h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z" />
+                <path fill-rule="evenodd"
+                  d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span><strong class="font-semibold text-gray-900">Database backups.</strong> Mantén tus datos seguros y
+                protegidos con nuestro servicio de Database backups. Realizamos copias de seguridad regulares de tu
+                base de datos para asegurar que tus datos estén a salvo ante cualquier eventualidad. Con nuestras
+                soluciones de respaldo, puedes tener la tranquilidad de que tus datos están protegidos y disponibles
+                cuando los necesites.</span>
+            </li>
+          </ul>
+          <p class="mt-8">Con nuestra aplicación, puedes decir adiós a las largas búsquedas de estacionamiento y las
+            vueltas sin rumbo. Ya sea que estés planeando una salida corta o un viaje largo, estamos aquí para
+            simplificar tu experiencia de estacionamiento. Únete a nuestra comunidad de usuarios satisfechos y
+            descubre por qué somos la opción preferida para aquellos que valoran la conveniencia y la eficiencia al
+            estacionar.</p>
+          <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">¿Sin estacionamiento disponible? ¡No hay
+            problema!</h2>
+          <p class="mt-6">Encuentra estacionamiento fácilmente con nuestra aplicación. Ya no tienes que preocuparte
+            por dar vueltas buscando un lugar para aparcar. Nuestra plataforma te ofrece una solución rápida y
+            conveniente para tus necesidades de estacionamiento. ¡Obtén acceso a una amplia selección de
+            estacionamientos cercanos y reserva tu lugar con anticipación para una experiencia sin estrés!</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <section >
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+            Flowbite    
+        </a>
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Sign in to your account
+                </h1>
+                <form class="space-y-4 md:space-y-6" action="#">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                              <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                            </div>
+                            <div class="ml-3 text-sm">
+                              <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                            </div>
+                        </div>
+                        <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+      
+</body>
+</html>
