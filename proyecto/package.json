@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-tailwind/html": "^2.2.2",
     "flowbite": "^2.3.0",
-    "kutty": "^0.6.0"
+    "kutty": "^0.6.0",
+    "sweetalert2": "^11.12.0"
   }
 }

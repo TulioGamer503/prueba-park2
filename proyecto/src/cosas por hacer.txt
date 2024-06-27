@@ -9,7 +9,7 @@ perfil
 Ver estacionamiento
 necesitas ayuda<<<
  |ayuda///
- |reportar problema
+ |reportar problema///
  |no endiendo los colores///
 
 
