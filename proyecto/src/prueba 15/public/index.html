@@ -3,24 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos del Sensor</title>
+    <title>Monitor de Sensores</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .sensor { margin: 20px; }
-        .sensor span { 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: white; 
+            color: gray; 
+            text-align: center; 
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sensor {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sensor span {
             font-weight: bold; 
             padding: 10px;
             border-radius: 5px;
+            display: inline-block;
+            min-width: 120px;
         }
-        .verde { color: white; background-color: green; }
-        .rojo { color: white; background-color: red; }
+
+        .verde { 
+            color: white; 
+            background-color: green; 
+        }
+
+        .rojo { 
+            color: white; 
+            background-color: red; 
+        }
     </style>
 </head>
 <body>
     <h1>Monitor de Sensores</h1>
-    <div class="sensor">Sensor 1: <span id="sensor1" class="verde">-</span></div>
-    <div class="sensor">Sensor 2: <span id="sensor2" class="verde">-</span></div>
-    <div class="sensor">Sensor 3: <span id="sensor3" class="verde">-</span></div>
+    <div class="grid-container">
+        <div class="sensor">Sensor 1: <span id="sensor1" class="verde">-</span></div>
+        <div class="sensor">Sensor 2: <span id="sensor2" class="verde">-</span></div>
+        <div class="sensor">Sensor 3: <span id="sensor3" class="verde">-</span></div>
+        <!-- Añadir más sensores si es necesario -->
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
