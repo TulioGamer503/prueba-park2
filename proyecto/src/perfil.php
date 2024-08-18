@@ -106,9 +106,6 @@
 </div>
 </div>
 <?php
-} else {
-echo "No se encontraron datos de usuario.";
-}
 ?>
     <footer class=" bg-gray-900">
         <div class="container p-6 mx-auto">

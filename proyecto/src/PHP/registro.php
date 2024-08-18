@@ -7,7 +7,7 @@
 $servername = "localhost"; // o el nombre de tu servidor
 $username = "root"; // tu usuario de MySQL
 $password = ""; // tu contraseña de MySQL
-$dbname = "crea"; // el nombre de tu base de datos
+$dbname = "crea-j"; // el nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -61,7 +61,7 @@ if ($stmt->execute()) {
     <script language='JavaScript'>
         Swal.fire({
             icon: 'success',
-            title: '¡Bienvenid@ a Parknow Administrador!',
+            title: '¡Registro existoso!',
             showConfirmButton: false,
             timer: 2000
         }).then(function() {
