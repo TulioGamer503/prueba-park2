@@ -10,76 +10,84 @@ $db_name = 'crea-j';
 $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (!$conn) {
-    die("Error de la conexion a la base de datos". mysqli_connect_error());
+    die("Error de la conexión a la base de datos: " . mysqli_connect_error());
 }
 
 session_start();
 
-if (!isset($_POST['correo'])) {
-    header('location:../HTML/login.php');
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = mysqli_real_escape_string($conn, $_POST['email']);
+    $contra = mysqli_real_escape_string($conn, $_POST['password']);
 
-$correo = $_POST['correo'];
-$contra = $_POST['contra'];
+    // Verificar en la tabla admin
+    $stmt = $conn->prepare("SELECT id, correo, password FROM admin WHERE correo = ?");
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$sql_admin = "SELECT * FROM admin WHERE correo = '$correo' and password = '$contra'";
-$result_admin = mysqli_query($conn, $sql_admin);
-$existe1 = mysqli_num_rows($result_admin);
-
-$sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$contra'";
-$result_user = mysqli_query($conn, $sql_user);
-$existe2 = mysqli_num_rows($result_user);
-
-if ($existe1 > 0) {
-    while ($row = mysqli_fetch_array($result_admin)) {
-        if ($correo == $row['email'] && $contra == $row['password']) {
-            $_SESSION['email'] = $row['email'];
+    if ($row = $result->fetch_assoc()) {
+        if (password_verify($contra, $row['password'])) {
+            $_SESSION['email'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo "
-            <script language='JavaScript'>
+
+            // Redirigir a la página de administración
+            echo "<script>
                 swal.fire({
                     icon: 'success',
-                    title: '¡Bienvenid@ a SaludRural Administrador!',
+                    title: '¡Inicio de sesión exitoso!',
+                    text: '¡Bienvenido administrador!',
                     showConfirmButton: false,
                     timer: 2000
                 }).then(function() {
-                    window.location = '../crud/index.php';
+                    window.location = '../crud-ad/index.php'; // URL para administradores
                 });
             </script>";
+            exit();
         }
     }
-} else if ($existe2 > 0) {
-    while ($row = mysqli_fetch_array($result_user)) {
-        if ($correo == $row['email'] && $contra == $row['contra']) {
+
+    // Verificar en la tabla registro (usuarios comunes)
+    $stmt = $conn->prepare("SELECT id, email, contra FROM registro WHERE email = ?");
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        if (password_verify($contra, $row['contra'])) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['id'];
-            echo "
-    <script language='JavaScript'>
+
+            // Redirigir a la página de usuarios
+            echo "<script>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Inicio de sesión exitoso!',
+                    text: '¡Bienvenido!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../crud-ad/index.php'; // URL para usuarios comunes
+                });
+            </script>";
+            exit();
+        }
+    }
+
+    // Si no se encontró coincidencia en ninguna tabla
+    echo "<script>
         swal.fire({
-            icon: 'success',
-            title: '¡Bienvenid@ a SaludRural!',
-            showConfirmButton: false,
-            timer: 2000
+            icon: 'error',
+            title: 'Usuario o contraseña incorrectos',
+            text: '¡Vuelva a ingresar sus datos!',
         }).then(function() {
-            window.location = '../HTML/Index.php';
+            window.location = '../login.html'; // URL del formulario de inicio de sesión
         });
     </script>";
 }
-    }
-} else {
-    echo "
-    <script language='JavaScript'>
-        swal.fire({
-            icon: 'error',
-            title: 'Su usuario o contraseña pueden estar incorrecto',
-            text: '¡Vuelva a ingresar sus datos!',
-        }).then(function() {
-            window.location = '../login.html';
-        });
-    </script>
-    ";
-}
+
+mysqli_close($conn);
 
 ?>
+
 </body>
 </html>
