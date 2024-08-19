@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
     <body>
@@ -6,7 +7,7 @@
 $db_host = 'localhost';
 $db_username = 'root';
 $db_password = '';
-$db_name = 'crea-j';
+$db_name = 'crea';
 $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (!$conn) {
@@ -20,14 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contra = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Verificar en la tabla admin
-    $stmt = $conn->prepare("SELECT id, correo, password FROM admin WHERE correo = ?");
+    $stmt = $conn->prepare("SELECT id, email, password FROM admin WHERE email = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($row = $result->fetch_assoc()) {
         if (password_verify($contra, $row['password'])) {
-            $_SESSION['email'] = $row['correo'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['id'];
 
             // Redirigir a la página de administración
@@ -66,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     showConfirmButton: false,
                     timer: 2000
                 }).then(function() {
-                    window.location = '../crud-ad/index.php'; // URL para usuarios comunes
+                    window.location = '../index.php'; // URL para usuarios comunes
                 });
             </script>";
             exit();

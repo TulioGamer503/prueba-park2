@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('location:../login.html');
+    exit();
+}
+
+// Aquí obtienes el nombre del usuario desde la sesión o la base de datos
+$nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del usuario en la sesión
+?>
 <!doctype html>
 <html class="bg-gray-200">
 <head>

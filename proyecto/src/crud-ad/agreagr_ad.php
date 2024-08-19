@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('location:../login.html');
+    exit();
+}
+
+// Aquí obtienes el nombre del usuario desde la sesión o la base de datos
+$nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del usuario en la sesión
+?>
 <!doctype html>
 <html class="bg-gray-200">
 <head>
@@ -99,7 +109,7 @@
                 </button>
             </div>
             <div class="px-4 py-5 sm:p-6">
-                <form id="addAdminForm" action="add_admin.php" method="POST">
+                <form id="addAdminForm" action="php/add_admin.php" method="POST">
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
                         <input type="email" id="email" name="email" required class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
