@@ -122,89 +122,67 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
     }
 </script>
 
-<section>
-  <div class="pb-4 border-b border-gray-600">
-    <h3 class="text-xl font-semibold leading-6 text-gray-800">Latest Entries</h3>
-  </div>
+ <div class="overflow-hidden bg-gray-200 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <div class="container mx-auto px-8">
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
+  Acerca de ParkNow
+</h1>
 
-  <div class="relative mx-auto max-w-7xl">
-    <div class="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
-      <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
-        <a href="/blog-post">
-          <div class="flex-shrink-0">
-            <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-1.jpg" alt="">
-          </div>
-        </a>
-        <div class="flex flex-col justify-between flex-1">
-          <a href="/blog-post"></a>
-          <div class="flex-1">
-            <a href="/blog-post">
-              <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                <time datetime="2020-03-10"> Mar 10, 2020 </time>
-                <span aria-hidden="true"> · </span>
-                <span> 4 min read </span>
-              </div>
-            </a>
-            <a href="#" class="block mt-2 space-y-6">
-              <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
-              <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
-        <a href="/blog-post">
-          <div class="flex-shrink-0">
-            <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-2.jpg" alt="">
-          </div>
-        </a>
-        <div class="flex flex-col justify-between flex-1">
-          <a href="/blog-post"></a>
-          <div class="flex-1">
-            <a href="/blog-post">
-              <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                <time datetime="2020-03-10"> Mar 10, 2020 </time>
-                <span aria-hidden="true"> · </span>
-                <span> 4 min read </span>
-              </div>
-            </a>
-            <a href="#" class="block mt-2 space-y-6">
-              <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
-              <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
-            </a>
-          </div>
-        </div>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Detección Automática</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Los sensores de proximidad permiten la detección automática de vehículos, asegurando la máxima
+                    eficiencia en la gestión del estacionamiento.
+                </p>
+            </div>
 
-      <div class="flex flex-col mb-12 overflow-hidden cursor-pointer">
-        <a href="/blog-post">
-          <div class="flex-shrink-0">
-            <img class="object-cover w-full h-48 rounded-lg" src="/assets/images/placeholders/neon-3.jpg" alt="">
-          </div>
-        </a>
-        <div class="flex flex-col justify-between flex-1">
-          <a href="/blog-post"></a>
-          <div class="flex-1">
-            <a href="/blog-post">
-              <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                <time datetime="2020-03-10"> Mar 10, 2020 </time>
-                <span aria-hidden="true"> · </span>
-                <span> 4 min read </span>
-              </div>
-            </a>
-            <a href="#" class="block mt-2 space-y-6">
-              <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">Typography on app.</h3>
-              <p class="text-lg font-normal text-gray-500">Filling text so you can see how it looks like with text. Did I said text?</p>
-            </a>
-          </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Interfaz Intuitiva</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    La interfaz está diseñada para ser fácil de usar tanto para administradores como para usuarios,
+                    garantizando una experiencia sin complicaciones.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Notificaciones en Tiempo Real</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Mantente informado sobre la disponibilidad de plazas en tiempo real, lo que te permite planificar
+                    mejor tu llegada al estacionamiento.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Historial de Ocupación</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Accede a reportes detallados sobre el uso y la ocupación del estacionamiento, facilitando la toma
+                    de decisiones informadas.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Seguridad Avanzada</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Protege la información y el acceso al sistema con autenticación avanzada para usuarios y
+                    administradores.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Equipo Dedicado</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    ParkNow es desarrollado por un equipo apasionado y dedicado, comprometido con ofrecer una
+                    solución innovadora y eficiente.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
-    
-<footer class=" dark:bg-gray-900">
+</div>
+</div>
+    </div>
+    <footer class=" dark:bg-gray-900">
         <div class="container p-6 mx-auto">
             <div class="lg:flex">
                 <div class="w-full -mx-6 lg:w-2/5">
@@ -289,7 +267,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 <p class="text-center  dark:text-gray-400">© Brand 2020 - All rights reserved</p>
             </div>
         </div>
-</footer>
+    </footer>
 
 </body>
 
