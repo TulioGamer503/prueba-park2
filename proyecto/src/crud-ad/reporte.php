@@ -57,9 +57,12 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75c0-.23-.035-.454-.1-.664M15 3h-3m0 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75c0-.23-.035-.454-.1-.664M15 3c.65 0 1.308.022 1.976.064.273.017.545.037.82.061M9 12h1.5m0 3h1.5m0 3h1.5M9 12V6.108c0-1.135-.845-2.098-1.976-2.192A48.424 48.424 0 007 3.826m-.102 1.024c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75c0-.23-.035-.454-.1-.664M7.227 5c.651-.073 1.308-.135 1.976-.186.273-.017.545-.037.82-.061" />
                             </svg>
-
-                            <span class="mx-2 text-sm font-medium">Subscribers</span>
                         </a>
+                        <a href="../PHP/logout.php"
+                            class="inline-flex items-center px-4 py-2 text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                            Reportar Problema
+                        </a>
+
                     </div>
                 </nav>
             </div>

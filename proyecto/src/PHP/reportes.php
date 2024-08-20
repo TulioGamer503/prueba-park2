@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-    <body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 // Conectar a la base de datos (reemplaza los valores con los de tu configuración)
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crea-j";
+$dbname = "crea";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -19,38 +19,44 @@ if ($conn->connect_error) {
 
 // Recibir datos del formulario
 $reporte = $_POST['reporte'];
-$sql = "INSERT INTO `reportes`(`id`, 'reporte') 
-        VALUES (NULL, '$reporte')";
 
-$resultado = mysqli_query($conn,$sql);
-mysqli_close($conn);
-if ($resultado) {
+// Preparar la consulta SQL (escapar datos para prevenir SQL Injection)
+$sql = "INSERT INTO `reportes` (`id`, `reporte`) VALUES (NULL, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('s', $reporte);
+
+// Ejecutar la consulta
+if ($stmt->execute()) {
     echo "
     <script language='JavaScript'>
         swal.fire({
             icon: 'success',
-            title: 'Te has registrado correctamente',
+            title: 'Reporte registrado correctamente',
             showConfirmButton: false,
             timer: 2000
         }).then(function() {
-            window.location = '../HTML/login.html';
+            window.location = '../reportar.php';
         });
     </script>
     ";
-}else{
+} else {
     echo "
     <script language='JavaScript'>
-        swal.fire({type: 'success',
-            title: 'Mal!'
+        swal.fire({
+            icon: 'error',
+            title: 'Error al registrar el reporte',
+            showConfirmButton: false,
+            timer: 2000
         }).then(function() {
-            window.location = '../HTML/login.html';
+            window.location = '../reportar.php';
         });
     </script>
     ";
 }
-    
+
+// Cerrar la conexión
+$stmt->close();
+$conn->close();
 ?> 
 </body>
 </html>
-
-

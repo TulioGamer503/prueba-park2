@@ -50,10 +50,28 @@
             color: white; 
             background-color: red; 
         }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <h1>Monitor de Sensores</h1>
+    <a href="http://localhost/Crea-J-2024/proyecto/src/index.php" class="button">Regresar al Inicio</a>
     <div class="grid-container">
         <div class="sensor">Sensor 1: <span id="sensor1" class="verde">-</span></div>
         <div class="sensor">Sensor 2: <span id="sensor2" class="verde">-</span></div>

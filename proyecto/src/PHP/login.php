@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
-    <body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $db_host = 'localhost';
 $db_username = 'root';
@@ -21,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contra = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Verificar en la tabla admin
-    $stmt = $conn->prepare("SELECT id, email, password FROM admin WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id_ad, email, password FROM admin WHERE email = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -29,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row = $result->fetch_assoc()) {
         if (password_verify($contra, $row['password'])) {
             $_SESSION['email'] = $row['email'];
-            $_SESSION['id'] = $row['id'];
+            $_SESSION['id_ad'] = $row['id_ad'];
 
             // Redirigir a la página de administración
             echo "<script>
@@ -43,52 +42,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     window.location = '../crud-ad/index.php'; // URL para administradores
                 });
             </script>";
-            exit();
-        }
-    }
-
-    // Verificar en la tabla registro (usuarios comunes)
-    $stmt = $conn->prepare("SELECT id, email, contra FROM registro WHERE email = ?");
-    $stmt->bind_param("s", $correo);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($row = $result->fetch_assoc()) {
-        if (password_verify($contra, $row['contra'])) {
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['id'] = $row['id'];
-
-            // Redirigir a la página de usuarios
+           
+        } else {
             echo "<script>
                 swal.fire({
-                    icon: 'success',
-                    title: '¡Inicio de sesión exitoso!',
-                    text: '¡Bienvenido!',
-                    showConfirmButton: false,
-                    timer: 2000
+                    icon: 'error',
+                    title: 'Contraseña incorrecta',
+                    text: '¡Vuelva a ingresar sus datos!',
                 }).then(function() {
-                    window.location = '../index.php'; // URL para usuarios comunes
+                    window.location = '../login.html'; // URL del formulario de inicio de sesión
                 });
             </script>";
-            exit();
+        }
+    } else {
+        // Verificar en la tabla registro (usuarios comunes)
+        $stmt = $conn->prepare("SELECT id, email, contra FROM registro WHERE email = ?");
+        $stmt->bind_param("s", $correo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($row = $result->fetch_assoc()) {
+            if (password_verify($contra, $row['contra'])) {
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['id'] = $row['id'];
+
+                // Redirigir a la página de usuarios
+                echo "<script>
+                    swal.fire({
+                        icon: 'success',
+                        title: '¡Inicio de sesión exitoso!',
+                        text: '¡Bienvenido!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location = '../index.php'; // URL para usuarios comunes
+                    });
+                </script>";
+                exit();
+            } else {
+                echo "<script>
+                    swal.fire({
+                        icon: 'error',
+                        title: 'Contraseña incorrecta',
+                        text: '¡Vuelva a ingresar sus datos!',
+                    }).then(function() {
+                        window.location = '../login.html'; // URL del formulario de inicio de sesión
+                    });
+                </script>";
+            }
+        } else {
+            // Si no se encontró coincidencia en ninguna tabla
+            echo "<script>
+                swal.fire({
+                    icon: 'error',
+                    title: 'Usuario no encontrado',
+                    text: '¡Vuelva a ingresar sus datos!',
+                }).then(function() {
+                    window.location = '../login.html'; // URL del formulario de inicio de sesión
+                });
+            </script>";
         }
     }
-
-    // Si no se encontró coincidencia en ninguna tabla
-    echo "<script>
-        swal.fire({
-            icon: 'error',
-            title: 'Usuario o contraseña incorrectos',
-            text: '¡Vuelva a ingresar sus datos!',
-        }).then(function() {
-            window.location = '../login.html'; // URL del formulario de inicio de sesión
-        });
-    </script>";
 }
 
 mysqli_close($conn);
-
 ?>
-
 </body>
 </html>
