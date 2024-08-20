@@ -17,6 +17,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+
     <div class="flex h-screen">
         <aside class="flex flex-col w-64 h-full px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
             <a href="#">

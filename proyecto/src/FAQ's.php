@@ -171,7 +171,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                     <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Es necesario descargar una aplicación para utilizar 'ParkNow'?</h1>
 
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
-                    Sí, 'ParkNow' cuenta con una aplicación móvil que permite a los usuarios consultar la disponibilidad de espacios, recibir notificaciones y gestionar su cuenta.
+                    No, 'ParkNow' es una web app que se puede utilizar en cualquier navegador, ya sea en tu computadora, tablet o smartphone. No es necesario descargar ninguna aplicación, ya que todas las funcionalidades están disponibles directamente desde cualquier navegador.
 
                     </p>
                 </div>
@@ -222,10 +222,10 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 </div>
 
                 <div>
-                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Se puede utilizar 'ParkNow' en diferentes tipos de propiedades, como centros comerciales, oficinas y residencias?</h1>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Se puede utilizar 'ParkNow' en diferentes tipos de propiedades, como centros comerciales y oficinas?</h1>
 
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
-                    Sí, 'ParkNow' es versátil y se puede adaptar para su uso en una variedad de propiedades, desde centros comerciales hasta edificios de oficinas y residencias privadas.
+                    Sí, 'ParkNow' es versátil y se puede adaptar para su uso en una variedad de propiedades, desde centros comerciales hasta edificios de oficinas.
 
                     </p>
                 </div>
@@ -253,10 +253,10 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 </div>
 
                 <div>
-                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Se puede utilizar 'ParkNow' en diferentes tipos de propiedades, como centros comerciales, oficinas y residencias?</h1>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Se puede utilizar 'ParkNow' en diferentes tipos de propiedades, como centros comerciales y oficinas?</h1>
 
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
-                    Sí, 'ParkNow' es versátil y se puede adaptar para su uso en una variedad de propiedades, desde centros comerciales hasta edificios de oficinas y residencias privadas.
+                    Sí, 'ParkNow' es versátil y se puede adaptar para su uso en una variedad de propiedades, desde centros comerciales hasta edificios y oficinas.
 
                     </p>
                 </div>
@@ -285,7 +285,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 </div>
 
                 <div>
-                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Cómo se integran los datos de 'ParkNow' con otros sistemas de gestión de estacionamiento?</h1>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Cómo se integran los datos de 'ParkNow' como sistemas de gestión de estacionamiento?</h1>
 
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                     'ParkNow' ofrece opciones de integración mediante APIs y protocolos estándar que permiten conectar su sistema con otras soluciones de gestión de estacionamiento y sistemas de información empresarial.
@@ -301,10 +301,10 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 </div>
 
                 <div>
-                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Qué medidas de accesibilidad ofrece 'ParkNow' para personas con discapacidades?</h1>
+                    <h1 class="text-xl font-semibold text-gray-700 dark:text-white">¿Qué medidas de accesibilidad ofrece 'ParkNow'?</h1>
 
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
-                    'ParkNow' se esfuerza por ser accesible para todos los usuarios, incluyendo características como interfaces amigables para personas con discapacidades, opciones de navegación adaptadas y soporte para tecnologías de asistencia.
+                    El sistema 'ParkNow' se esfuerza por ser accesible para todas las personas, incluyendo características como interfaces amigables para todas las personas , opciones de navegación adaptadas y un selector de idiomas que actúa como traductor para facilitar la comprensión en diferentes idiomas.
 
                     </p>
                 </div>

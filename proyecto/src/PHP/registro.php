@@ -7,7 +7,7 @@
 $servername = "localhost"; // o el nombre de tu servidor
 $username = "root"; // tu usuario de MySQL
 $password = ""; // tu contraseña de MySQL
-$dbname = "crea-j"; // el nombre de tu base de datos
+$dbname = "crea"; // el nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

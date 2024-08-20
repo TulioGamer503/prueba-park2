@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2024 a las 23:17:04
+-- Tiempo de generación: 20-08-2024 a las 18:04:48
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,27 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `admin`
+-- Estructura de tabla para la tabla `administradores`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `administradores` (
   `id` int(11) NOT NULL,
-  `email` text NOT NULL,
-  `nombre` text NOT NULL,
-  `password` text NOT NULL,
-  `fecha_registro` datetime NOT NULL DEFAULT current_timestamp()
+  `email` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `contra` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `admin`
+-- Volcado de datos para la tabla `administradores`
 --
 
-INSERT INTO `admin` (`id`, `email`, `nombre`, `password`, `fecha_registro`) VALUES
-(2, 'jr', 'jrsanchez@gmail.com', '123', '2024-06-19 15:35:20'),
-(4, 'a', 'a', 'a', '2024-06-19 15:38:20'),
-(5, 'a', 'a', 'a', '2024-06-19 15:38:20'),
-(6, 'a', 'a', 'a', '2024-06-19 15:38:33'),
-(7, 'a', 'a', 'a', '2024-06-19 15:38:33');
+INSERT INTO `administradores` (`id`, `email`, `nombre`, `contra`) VALUES
+(1, 'jr@gmail.com', '123', '123');
 
 -- --------------------------------------------------------
 
@@ -66,19 +61,9 @@ CREATE TABLE `registro` (
 --
 
 INSERT INTO `registro` (`id`, `nombre`, `apellido`, `email`, `contra`, `fecha_registro`) VALUES
-(5, 'aaa', '', 'aaa', 'aaa@gmail.com', '2024-05-14 13:00:21'),
-(6, 'aaa', '', 'aaa', 'aaa@gmail.com', '2024-05-14 13:00:31'),
-(7, 'aaa', '', 'aaa', 'aaa@gmail.com', '2024-05-14 13:09:12'),
-(8, 'a', '', 'a', 'a@gmail.com', '2024-05-14 13:09:22'),
-(9, 'a', '', 'a', 'a@gmail.com', '2024-05-14 13:10:30'),
-(10, 'a', '', 'a', 'a@gmail.com', '2024-05-14 13:23:08'),
-(11, 'a', '', 'a', 'a@gmail.com', '2024-05-14 13:23:24'),
-(12, 'jacinto', '', 'jr73@gmail.com', '123', '2024-05-26 18:31:27'),
-(13, 'a', '', 'a', 'a', '2024-06-20 17:11:56'),
-(14, 'julio', '', 'a', 'jr73@gmail.com', '2024-06-22 10:27:38'),
-(15, 'julio', 'jacinto', 'jrsanchez@gmail.com', '$2y$10$wJEa/zTQhc94lROzR9ZsM.yos5K2VJMVhMkd4uLJ//SM/ojupvf6q', '2024-06-22 10:49:46'),
-(16, 'julio', 'jacinto', 'jrsanchez@gmail.com', '$2y$10$H80SZEdGPxDg5fi4vB1v/uHD0RHslkUtMlcAWf0BN1Jb.JiVkafhC', '2024-06-22 10:51:03'),
-(17, 'julio', 'jacinto', 'jrsanchez@gmail.com', '$2y$10$YNIncSUV//wGzcGaFBAtt.OAULvBfCNyQZTHJhr1o26GM8kq78piu', '2024-06-22 10:51:32');
+(1, 'julio', 'jacinto', 'Verstappen_Checo@gmail.com', '$2y$10$lU99u62WvGOv9pjGrIi5DuPGA4nWAhBoS7x4X1RThPjlwuwhq1alK', '2024-08-18 15:35:42'),
+(2, 'julio', 'jacinto', 'Verstappen_Checo@gmail.com', '$2y$10$Tc9Xj7NmzcyrABUggEJNTuPOb2piQ8KQNgieQUvuFJ7IZrKCrvBYa', '2024-08-18 15:59:49'),
+(3, 'Carlos Eduardo', 'Merino Ventura', 'merinoventura123@gmail.com', '$2y$10$/hp//5d5SoCJW1.nMGcPD.aH/xIdw.4NIun1R90liUdHBYnTiKgyy', '2024-08-20 08:15:39');
 
 -- --------------------------------------------------------
 
@@ -93,14 +78,24 @@ CREATE TABLE `reportes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `reportes`
+--
+
+INSERT INTO `reportes` (`id`, `reporte`, `fecha`) VALUES
+(1, 'aaa', '2024-08-20 03:44:00'),
+(2, 'aaa', '2024-08-20 03:44:43'),
+(3, 'aaa', '2024-08-20 03:45:22');
+
+--
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `admin`
+-- Indices de la tabla `administradores`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `administradores`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indices de la tabla `registro`
@@ -119,22 +114,22 @@ ALTER TABLE `reportes`
 --
 
 --
--- AUTO_INCREMENT de la tabla `admin`
+-- AUTO_INCREMENT de la tabla `administradores`
 --
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `administradores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

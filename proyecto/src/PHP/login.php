@@ -20,15 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contra = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Verificar en la tabla admin
-    $stmt = $conn->prepare("SELECT id_ad, email, password FROM admin WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, email, contra FROM administradores WHERE email = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($row = $result->fetch_assoc()) {
-        if (password_verify($contra, $row['password'])) {
+        if (password_verify($contra, $row['contra'])) {
             $_SESSION['email'] = $row['email'];
-            $_SESSION['id_ad'] = $row['id_ad'];
+            $_SESSION['id'] = $row['id'];
 
             // Redirigir a la página de administración
             echo "<script>
