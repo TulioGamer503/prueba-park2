@@ -63,7 +63,7 @@ if ($result->num_rows > 0) {
 }
 
 // Calcular el número total de páginas
-$sql_count = "SELECT COUNT(*) AS total FROM `admin`";
+$sql_count = "SELECT COUNT(*) AS total FROM `administradores`";
 $result_count = $conn->query($sql_count);
 $row_count = $result_count->fetch_assoc();
 $total_pages = ceil($row_count['total'] / $results_per_page);
