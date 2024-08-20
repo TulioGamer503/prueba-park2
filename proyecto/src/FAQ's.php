@@ -11,6 +11,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
 <!doctype html>
 <html>
 <head>
+    <title>Preguntas frecuentes</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="output.css" rel="stylesheet">
