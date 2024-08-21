@@ -57,6 +57,7 @@
                                     src="../img/ojofoto.png" width="30px" alt="Mostrar/ocultar contraseña"
                                     onclick="togglePasswordVisibility()">
                             </div>
+                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 1 y 8 caracteres, al menos una mayúscula y un signo especial.</span>
                         </div>
                     
                         <script>
@@ -76,11 +77,15 @@
                                 var nombreInput = document.getElementById("nombre");
                                 var apellidoInput = document.getElementById("apellido");
                                 var emailInput = document.getElementById("email");
+                                var passwordInput = document.getElementById("ver");
                                 var nombreError = document.getElementById("nombre-error");
                                 var apellidoError = document.getElementById("apellido-error");
                                 var emailError = document.getElementById("email-error");
+                                var passwordError = document.getElementById("password-error");
+                    
                                 var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/;
                                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                                var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{1,8}$/;
                     
                                 var isValid = true;
                     
@@ -106,6 +111,14 @@
                                     isValid = false;
                                 } else {
                                     emailError.classList.add("hidden");
+                                }
+                    
+                                if (!passwordPattern.test(passwordInput.value)) {
+                                    passwordError.classList.remove("hidden");
+                                    passwordInput.focus();
+                                    isValid = false;
+                                } else {
+                                    passwordError.classList.add("hidden");
                                 }
                     
                                 return isValid;
