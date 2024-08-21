@@ -95,7 +95,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-medium text-gray-700">Contraseña:</label>
                         <input type="password" id="password" name="password" required minlength="8"
-                            title="La contraseña debe tener al menos 8 caracteres."
+                            title="La contraseña debe tener al menos 12 caracteres."
                             class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="flex justify-end">
