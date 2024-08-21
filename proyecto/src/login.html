@@ -37,7 +37,7 @@
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
                         <div class="relative">
                             <!-- Input para la contraseña con opción de mostrar/ocultar -->
-                            <input type="password" name="password" id="ver" placeholder="1 o 12 caracteres"
+                            <input type="password" name="password" id="ver" placeholder="5 o 12 caracteres"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
                             <!-- Icono para mostrar/ocultar la contraseña -->
@@ -47,7 +47,7 @@
                                 onclick="togglePasswordVisibility()">
                         </div>
                         <!-- Mensaje de error que se muestra si la contraseña no cumple con los requisitos -->
-                        <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 1 y 12 caracteres, al menos una mayúscula y un signo especial.</span>
+                        <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 5 y 12 caracteres, al menos una mayúscula y un signo especial.</span>
                     </div>
                 
                     <!-- Script para manejar la visibilidad de la contraseña y validar el formulario -->
@@ -77,7 +77,7 @@
                 
                             // Define los patrones de validación
                             var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Valida el formato del correo
-                            var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{1,12}$/; // Valida que la contraseña tenga entre 1 y 12 caracteres, con al menos una mayúscula y un signo especial
+                            var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,12}$/; // Valida que la contraseña tenga entre 1 y 12 caracteres, con al menos una mayúscula y un signo especial
                 
                             var isValid = true; // Bandera para verificar si todo es válido
                 
