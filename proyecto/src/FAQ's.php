@@ -17,6 +17,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -25,10 +26,9 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
 <nav class="bg-gray-800 py-6 relative">
     <div class="container mx-auto flex px-8 xl:px-0">
         <div class="flex flex-grow">
-            <img src="../img/parking-de-bicicletas.png" alt="Logo" class="w-10">
+        <img src="../img/logo.png" alt="Logo" class="w-10">
         </div>
         <div class="flex lg:hidden">
-            <img src="../img/barra-de-menus.png" alt="Menu" onclick="openMenu();">
         </div>
         <div id="menu"
             class="lg:flex hidden flex-grow justify-between absolute lg:relative lg:top-0 top-20 bg-gray-800 w-full left-0 py-14 lg:w-auto items-center lg:py-0 px-8 sm:px-24 lg:px-0">

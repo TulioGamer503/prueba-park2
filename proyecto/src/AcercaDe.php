@@ -17,6 +17,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -25,7 +26,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
 <nav class="bg-gray-800 py-6 relative">
     <div class="container mx-auto flex px-8 xl:px-0">
         <div class="flex flex-grow">
-            <img src="../img/parking-de-bicicletas.png" alt="Logo" class="w-10">
+            <img src="../img/logo.png" alt="Logo" class="w-10">
         </div>
         <div class="flex lg:hidden">
             <img src="../img/barra-de-menus.png" alt="Menu" onclick="openMenu();">
@@ -189,7 +190,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
             <div class="w-full -mx-6 lg:w-2/5">
                 <div class="px-6">
                     <a href="#">
-                        <img class="w-auto h-7" src="../img/logo.png" alt="ParkNow Logo">
+                        <img class="w-10 h-10" src="../img/logo.png" alt="ParkNow Logo" >
                     </a>
                     <p class="max-w-sm mt-2 text-gray-600">Join our community and stay updated with new tips, tutorials, and more.</p>
                     <div class="flex mt-6 -mx-2">

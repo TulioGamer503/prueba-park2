@@ -16,13 +16,14 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="output.css" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="../img/logo.png" type="image/x-icon">
 </head>
 <body>
     <body>
     <nav class="bg-gray-800 py-6 relative">
         <div class="container mx-auto flex px-8 xl:px-0">
             <div class="flex flex-grow">
-                <img src="../img/parking-de-bicicletas.png" alt="" class="w-10">
+            <img src="../img/logo.png" alt="Logo" class="w-10">
             </div>
             <div class="flex lg:hidden">
                 <img src="../img/barra-de-menus.png" alt="" srcset="" onclick="openMenu();">
