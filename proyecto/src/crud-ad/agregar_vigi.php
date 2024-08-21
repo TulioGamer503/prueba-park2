@@ -12,7 +12,7 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
 <html class="bg-gray-200">
 
 <head>
-    <title>Administradores</title>
+    <title>Vigilante</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../output.css" rel="stylesheet">
@@ -88,14 +88,11 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                     <div class="mb-4">
                         <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required
-                            pattern="[A-Za-záéíóúÁÉÍÓÚÑñ\s]+"
-                            title="El nombre solo puede contener letras y espacios."
                             class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-medium text-gray-700">Contraseña:</label>
-                        <input type="password" id="password" name="password" required minlength="8"
-                            title="La contraseña debe tener al menos 8 caracteres."
+                        <input type="password" id="password" name="password" required
                             class="mt-1 p-2 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="flex justify-end">
@@ -106,7 +103,6 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
             </div>
         </div>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -151,23 +147,6 @@ $nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del u
                 modal.classList.add("hidden");
             }
         }
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('addAdminForm');
-
-            form.addEventListener('submit', (event) => {
-                const passwordField = document.getElementById('password');
-                const password = passwordField.value;
-
-                if (password.length < 8) {
-                    event.preventDefault(); // Previene el envío del formulario
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'La contraseña debe tener al menos 8 caracteres.',
-                    });
-                }
-            });
-        });
     </script>
 </body>
 

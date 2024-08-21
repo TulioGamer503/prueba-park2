@@ -25,7 +25,7 @@ $password = $_POST['password'];
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 // Insertar datos en la base de datos
-$sql = "INSERT INTO administradores (NULL,email, nombre, password) VALUES (?, ?, ?)";
+$sql = "INSERT INTO administradores (email, nombre, contra) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sss", $email, $nombre, $hashed_password);
 

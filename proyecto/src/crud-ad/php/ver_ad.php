@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 // Manejar la solicitud de eliminación
 if (isset($_POST['delete_id'])) {
     $delete_id = $conn->real_escape_string($_POST['delete_id']);
-    $delete_sql = "DELETE FROM `admin` WHERE `id` = '$delete_id'";
+    $delete_sql = "DELETE FROM `administradores` WHERE `id` = '$delete_id'";
     if ($conn->query($delete_sql) === TRUE) {
         echo "Registro eliminado correctamente.";
     } else {
@@ -37,15 +37,15 @@ if (isset($_POST['delete_id'])) {
 }
 
 // Consulta SQL para obtener los administradores paginados
-$sql = "SELECT * FROM `admin` LIMIT $start_from, $results_per_page";
+$sql = "SELECT * FROM `administradores` LIMIT $start_from, $results_per_page";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Imprimir datos de cada fila
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
-        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['email']) . '</td>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['nombre']) . '</td>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['email']) . '</td>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['fecha_registro']) . '</td>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">';
         echo '<form method="POST" style="display:inline-block;">';
@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
 }
 
 // Calcular el número total de páginas
-$sql_count = "SELECT COUNT(*) AS total FROM `admin`";
+$sql_count = "SELECT COUNT(*) AS total FROM `administradores`";
 $result_count = $conn->query($sql_count);
 $row_count = $result_count->fetch_assoc();
 $total_pages = ceil($row_count['total'] / $results_per_page);
