@@ -73,7 +73,7 @@
                                     onclick="togglePasswordVisibility()">
                             </div>
                             <!-- Mensaje de error si la contraseña no cumple con los requisitos -->
-                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 1 y 8 caracteres, al menos una mayúscula y un signo especial.</span>
+                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 1 y 12 caracteres, al menos una mayúscula y un signo especial.</span>
                         </div>
                     
                         <!-- Script para manejar la visibilidad de la contraseña y validar el formulario -->
@@ -109,7 +109,7 @@
                                 // Definir los patrones de validación
                                 var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/; // Solo letras, incluyendo acentos y ñ
                                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Validar el formato del correo
-                                var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{1,8}$/; // Contraseña con mayúscula, signo especial, y entre 1 y 8 caracteres
+                                var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{1,12}$/; // Contraseña con mayúscula, signo especial, y entre 1 y 12 caracteres
                     
                                 var isValid = true; // Bandera para verificar si todo es válido
                     
